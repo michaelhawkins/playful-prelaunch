@@ -12,14 +12,15 @@
 - webjars (for Bootstrap and JQuery)  
 
 #### To date it demonstrates the following aspects of Play:  
-- Evolutions:  
-	- Create and alter table  
-- The CR part of CRUD using ScalaAnorm  
-- Scala/Play localization  
 - Partials  
 - Scala templates / Play forms
-- Testing via specs2 including static pages, dynamic pages and routes
-- Demonstrates emailing through Mandrill API both with and without templates
+- Testing via specs2 including static pages and routes
 
-#### What does it need to do:  
+#### What it will do:  
+- Evolutions:  
+  - Create and alter table  
+- The CR part of CRUD using ScalaAnorm
+- specs2 testing of dynamic pages
+- Scala/Play i18n (localization)
+- Demonstrates emailing through Mandrill API both with and without templates
 - Authorization to allow an admin to view who has registered for launch information and to download a CSV
