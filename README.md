@@ -1,7 +1,6 @@
 ### This is the Playful Prelaunch sample app.
 
 #### The stack:
-
 - Play Framework 2.3.0  
 - Scala 2.10.4  
 - Twitter Bootstrap 3.1.1  
