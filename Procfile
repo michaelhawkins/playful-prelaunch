@@ -1,1 +1,1 @@
-web: target/universal/stage/bin/my-playful-prelaunch -Dhttp.port=${PORT}
+web: target/universal/stage/bin/my-playful-prelaunch2 -Dhttp.port=${PORT}
