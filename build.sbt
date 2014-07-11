@@ -1,4 +1,4 @@
-name := """my-playful-prelaunch2"""
+name := """my-playful-prelaunch"""
 
 version := "1.0-SNAPSHOT"
 
