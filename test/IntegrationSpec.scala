@@ -4,6 +4,7 @@ import org.junit.runner._
 
 import play.api.test._
 import play.api.test.Helpers._
+import play.api.i18n._
 
 /**
  * add your integration spec here.
@@ -17,7 +18,7 @@ class IntegrationSpec extends Specification {
     "work from within a browser" in new WithBrowser {
 
       browser.goTo("http://localhost:" + port)
-      browser.pageSource must contain("Playful Prelaunch App")
+      browser.pageSource must contain(Messages("global.appName"))
     }
 
   }

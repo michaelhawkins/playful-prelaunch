@@ -14,7 +14,7 @@ class MarketingSpec extends Specification {
     "display certain elements on the about page" in new WithBrowser {
       //  about page
       browser.goTo("http://localhost:" + port + "/about")
-      browser.$("h1").first.getText must equalTo("About us")
+      browser.$("h1").first.getText must equalTo(Messages("global.about"))
     }
 
   }

@@ -2,16 +2,15 @@ package controllers
 
 import play.api._
 import play.api.mvc._
+import play.api.i18n._
 
 object Marketing extends Controller {
 
   def about = Action {
-
-    Ok(views.html.marketing.about("About us"))
-
+    Ok(views.html.marketing.about(Messages("global.about")))
   }
 
   def contact = Action {
-    Ok("Contact us")
+    Ok(Messages("global.contact"))
   }
 }
