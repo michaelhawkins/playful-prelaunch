@@ -21,5 +21,20 @@ class IntegrationSpec extends Specification {
       browser.pageSource must contain(Messages("global.appName"))
     }
 
+    "allow you to register your name and email and take you to signupSuccess page" in new WithBrowser {
+      browser.goTo("http://localhost:" + port)
+
+      val name: String = "JW Smith"
+      val email: String = "jackson@playfultutorials.org"
+
+      browser.$("#name").text(name)
+      browser.$("#email").text(email)
+      browser.$(".btn-primary").click()
+
+      browser.pageSource must contain("Thank you " + name + " for signing up to hear more")
+      browser.pageSource must contain("Once we launch we will email you at " + email)
+
+    }
+
   }
 }

@@ -6,8 +6,9 @@ import play.api.i18n._
 
 object Application extends Controller {
 
-  def index = Action {
-    Ok(views.html.index(Messages("global.home")))
-  }
+/**  def index = Action {
+#    Ok(views.html.index(Messages("global.home")))
+#  }
+*/
 
 }

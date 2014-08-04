@@ -3,8 +3,9 @@ global.appName = Playful Prelaunch App
 global.companyName = Playful Prelaunch LLC.
 global.home = Home
 global.how = How it works
-global.welcomeToThe = Welcome to the
 global.playFramework = Play! Framework
+global.register = Register
+global.welcomeToThe = Welcome to the
 
 generic.thisIsThe = This is the
 generic.sampleApp = Sample Application
