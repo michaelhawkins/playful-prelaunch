@@ -20,23 +20,16 @@ class ApplicationSpec extends Specification {
       route(FakeRequest(GET, "/boum")) must beNone
     }
 
-    "render the index page" in new WithApplication{
+    "render the index/registration page" in new WithApplication{
       val home = route(FakeRequest(GET, "/")).get
 
       status(home) must equalTo(OK)
       contentType(home) must beSome.which(_ == "text/html")
       contentAsString(home) must contain (Messages("global.appName"))
-    }
-
-    "render the registration page" in new WithApplication{
-      val home = route(FakeRequest(GET, "/")).get
-
-      status(home) must equalTo(OK)
-      contentType(home) must beSome.which(_ == "text/html")
-      contentAsString(home) must contain (Messages("global.appName"))
-      contentAsString(home) must contain (Messages("Register"))
-      contentAsString(home) must contain (Messages("person.name"))
-      contentAsString(home) must contain (Messages("person.email"))
+      contentAsString(home) must contain (Messages("signup.register"))
+      contentAsString(home) must contain (Messages("person.firstname"))
+      contentAsString(home) must contain (Messages("person.lastname"))
+      contentAsString(home) must contain (Messages("email.email"))
     }
 
   }
