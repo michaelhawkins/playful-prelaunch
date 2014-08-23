@@ -10,10 +10,11 @@ object Message {
   def buildRegistrationTemplate(firstName: String, lastName: String, email: String, mandrillKey: String): JsValue = {
     JsObject(Seq(
     //      "key" -> JsString("5t1Q3spLNNtrBesf3gxK7A"),*/
-          "key" -> JsString(play.Play.application.configuration.getString("mandrillKey")),
+          "key" -> JsString(mandrillKey),
           "template_name" -> JsString("Playful-Prelaunch-Contact-Us"),
           "template_content" -> JsArray(Seq(
-            JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName)), JsObject(Seq("name" -> JsString("appname)", "content" -> JsString("global.appName")))))),
+            JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName))),
+            JsObject(Seq("name" -> JsString("appname"), "content" -> JsString("global.appName"))))),
           "message" -> JsObject(
             Seq("subject" -> JsString("Thank you for contacting us"),
               "from_email" -> JsString(Messages("global.fromEmail")),
