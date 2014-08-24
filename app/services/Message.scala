@@ -11,7 +11,7 @@ object Message {
     JsObject(Seq(
     //      "key" -> JsString("5t1Q3spLNNtrBesf3gxK7A"),*/
           "key" -> JsString(mandrillKey),
-          "template_name" -> JsString("Playful-Prelaunch-Contact-Us"),
+          "template_name" -> JsString("my-playful-prelaunch-registration"),
           "template_content" -> JsArray(Seq(
             JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName))),
             JsObject(Seq("name" -> JsString("appname"), "content" -> JsString("global.appName"))))),
