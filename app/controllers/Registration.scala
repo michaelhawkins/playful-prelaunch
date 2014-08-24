@@ -29,8 +29,9 @@ object Registration extends Controller {
       person => {
         val newPerson = Person.create(person.firstName, person.lastName,
           person.email)
+        Message.emailNewRegistration(newPerson.firstName, newPerson.lastName, newPerson.email)
         Ok(views.html.registration.registrationSuccess(newPerson.firstName, newPerson.email))
-        Message.emailNewRegistration(newPerson.firstName, newPerson.email)
+
       }
     )
   }
