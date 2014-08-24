@@ -16,9 +16,9 @@ def buildRegistrationTemplate(firstName: String, lastName: String, email: String
           JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName))),
           JsObject(Seq("name" -> JsString("appname"), "content" -> JsString(Messages("global.appName")))))),
         "message" -> JsObject(
-          Seq("subject" -> JsString("Thank you for your interest in" + Messages("global.appName")),
+          Seq(/*"subject" -> JsString("Thank you for your interest in " + Messages("global.appName")),
             "from_email" -> JsString(Messages("global.fromEmail")),
-            "from_name" -> JsString(Messages("global.companyName")),
+            "from_name" -> JsString(Messages("global.companyName"))*/,
             "to" -> JsArray(Seq(
                 JsObject(Seq("email" -> JsString(email),
                 "name" -> JsString(firstName + " " + lastName),

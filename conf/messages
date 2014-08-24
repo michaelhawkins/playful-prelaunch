@@ -5,6 +5,7 @@ global.home = Home
 global.how = How it works
 global.playFramework = Play! Framework
 global.register = Register
+global.replyToEmail = no-reply@hawkinsunlimited.com
 global.welcomeToThe = Welcome to the
 
 generic.thisIsThe = This is the
