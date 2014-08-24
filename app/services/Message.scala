@@ -9,17 +9,13 @@ object Message {
 
 def buildRegistrationTemplate(firstName: String, lastName: String, email: String, mandrillKey: String): JsValue = {
   JsObject(Seq(
-  //      "key" -> JsString("5t1Q3spLNNtrBesf3gxK7A"),*/
         "key" -> JsString(mandrillKey),
         "template_name" -> JsString("my-playful-prelaunch-registration"),
         "template_content" -> JsArray(Seq(
           JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName))),
           JsObject(Seq("name" -> JsString("appname"), "content" -> JsString(Messages("global.appName")))))),
         "message" -> JsObject(
-          Seq(/*"subject" -> JsString("Thank you for your interest in " + Messages("global.appName")),
-            "from_email" -> JsString(Messages("global.fromEmail")),
-            "from_name" -> JsString(Messages("global.companyName")),*/
-            "to" -> JsArray(Seq(
+          Seq("to" -> JsArray(Seq(
                 JsObject(Seq("email" -> JsString(email),
                 "name" -> JsString(firstName + " " + lastName),
                 "type" -> JsString("to")
@@ -34,7 +30,7 @@ def buildRegistrationTemplate(firstName: String, lastName: String, email: String
     val mandrillKey: String = play.Play.application.configuration.getString("mandrillKey")
     val jsonClass = buildRegistrationTemplate(firstName, lastName, email, mandrillKey)
 
-    val apiUrl = "https://mandrillapp.com/api/1.0/messages/send-template.json"
+    val apiUrl = play.Play.application.configuration.getString("mandrillSendViaTemplateUrl")
     val futureResponse: Future[WSResponse] = WS.url(apiUrl).post(jsonClass)
   }
 }
