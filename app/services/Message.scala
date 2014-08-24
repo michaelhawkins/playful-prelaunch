@@ -16,7 +16,7 @@ object Message {
             JsObject(Seq("name" -> JsString("firstname"), "content" -> JsString(firstName))),
             JsObject(Seq("name" -> JsString("appname"), "content" -> JsString("global.appName"))))),
           "message" -> JsObject(
-            Seq("subject" -> JsString("Thank you for contacting us"),
+            Seq("subject" -> JsString("Thank you for your interest in" + Messages("global.appName")),
               "from_email" -> JsString(Messages("global.fromEmail")),
               "from_name" -> JsString(Messages("global.companyName")),
               "to" -> JsArray(Seq(
