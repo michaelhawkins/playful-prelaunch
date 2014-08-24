@@ -34,7 +34,7 @@ def buildRegistrationTemplate(firstName: String, lastName: String, email: String
     val mandrillKey: String = play.Play.application.configuration.getString("mandrillKey")
     val jsonClass = buildRegistrationTemplate(firstName, lastName, email, mandrillKey)
 
-    val apiUrl = play.Play.application.configuration.getString("mandrillSendViaTemplateURL")
+    val apiUrl = "https://mandrillapp.com/api/1.0/messages/send-template.json"
     val futureResponse: Future[WSResponse] = WS.url(apiUrl).post(jsonClass)
   }
 }
