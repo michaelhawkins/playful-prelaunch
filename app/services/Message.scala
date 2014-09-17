@@ -31,6 +31,6 @@ def buildRegistrationTemplate(firstName: String, lastName: String, email: String
     val jsonClass = buildRegistrationTemplate(firstName, lastName, email, mandrillKey)
 
     val apiUrl = play.Play.application.configuration.getString("mandrillSendViaTemplateUrl")
-    val futureResponse: Future[WSResponse] = WS.url(apiUrl).post(jsonClass)
+    WS.url(apiUrl).post(jsonClass)
   }
 }
